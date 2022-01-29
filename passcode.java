@@ -1,3 +1,5 @@
+/* Just a program to generate a random passcode 
+since random is improbable */
 import java.util.Random;
 import java.util.Scanner;
 
