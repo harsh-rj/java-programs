@@ -1,14 +1,26 @@
 import java.util.Scanner;
 
 public class binaryToInt {
+    public static int getDigitAt(int num, int place) {
+        int noOfDigits = ((int) Math.floor(Math.log10(num)) + 1);
+        int digit;
+        if (place<0 || place>noOfDigits) {
+            return -1;
+        }
+        else {
+            digit = ((int) (num%Math.pow(10, (place+1)))/(int) Math.pow(10, place));
+            return digit;
+        }
+    }
     public static void main(String[] args) {
-        int bit; 
+        int bit;
         int deci = 0;
         Scanner sc = new Scanner(System.in);
+        System.out.println("enter the binary num:.");
         bit = sc.nextInt();
-        int numOfdigitsInBit = (int) (Math.floor(Math.log10(bit)) + 1);
+        int numOfdigitsInBit = ((int) Math.floor(Math.log10(bit)) + 1);
         for (int i = numOfdigitsInBit; i > 0; i--) {
-            int digit = (int) (bit/(Math.pow(10, i)));
+            int digit = getDigitAt(bit, i-1);
             if (digit == 1) {
                 deci = deci +  2^(i-1);
             }
