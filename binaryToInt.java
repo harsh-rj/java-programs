@@ -18,14 +18,13 @@ public class binaryToInt {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the binary num:.");
         bit = sc.nextInt();
-        int numOfdigitsInBit = ((int) Math.floor(Math.log10(bit)) + 1);
-        for (int i = numOfdigitsInBit; i > 0; i--) {
-            int digit = getDigitAt(bit, i-1);
-            if (digit == 1) {
-                deci = deci +  2^(i-1);
+        int numOfdigitsInBit = ((int) Math.floor(Math.log10(bit))+1);
+        for (int i = 0; i<numOfdigitsInBit; i++) {
+            if (getDigitAt(bit, i) == 1) {
+                deci += (int) Math.pow(2, i);
             }
         }
-        System.out.println(deci);
+        System.out.println("in decimal: " + deci);
         sc.close();
     }
 }
