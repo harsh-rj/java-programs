@@ -1,4 +1,3 @@
-
 // A program to convert integer to binary
 import java.util.LinkedList;
 import java.util.Scanner;
